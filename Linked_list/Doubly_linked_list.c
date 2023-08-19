@@ -26,13 +26,13 @@ int main(){
 
  do
   {
-   printf("Select an option of Linked list operation\n");
    printf("1: Insert node at begining\n");
    printf("2: Insert node at end\n");
    printf("3: Delete node at begining\n");
    printf("4: Delete node at end\n");
    printf("5: Display the nodes\n");
    printf("6: exit\n");
+   printf("Select an option of Linear Doubly Linked list operation: ");
    scanf("%d", &choice);
 
    switch(choice){
@@ -88,6 +88,7 @@ int insert_begi(){
  }
  else{
   Newnode->next = first;
+  first->prev = Newnode;
   Newnode->prev = NULL;
   first = Newnode;
  }

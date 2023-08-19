@@ -28,7 +28,6 @@ int main(){
 
  do
  {
-  printf("Select an option of Linked list operation\n");
   printf("1: Insert node at begining\n");
   printf("2: Insert node at end\n");
   printf("3: Insert node at between\n");
@@ -37,6 +36,7 @@ int main(){
   printf("6: Delete node at between\n");
   printf("7: Display the nodes\n");
   printf("8: exit\n");
+  printf("Select an option of Linear Linked list operation: ");
   scanf("%d", &choice);
 
   switch(choice){
