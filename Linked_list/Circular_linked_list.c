@@ -5,11 +5,11 @@
 #include<process.h>
 
 int elm;
-int insert_begi();
-int insert_end();
-int delete_begi();
-int delete_end();
-int display();
+void insert_begi();
+void insert_end();
+void delete_begi();
+void delete_end();
+void display();
 
 struct Node
 {
@@ -73,7 +73,7 @@ int main(){
  while (ch=='y'||ch=='Y');
 }
 
-int insert_begi(){
+void insert_begi(){
  NodeType *Newnode;
  Newnode = (NodeType*)malloc(sizeof(NodeType));
 
@@ -92,7 +92,7 @@ int insert_begi(){
  }
 }
 
-int insert_end(){
+void insert_end(){
  NodeType *Newnode;
  Newnode = (NodeType*)malloc(sizeof(NodeType));
 
@@ -113,34 +113,33 @@ int insert_end(){
  }
 }
 
-int delete_begi(){
- NodeType *temp;
+void delete_begi(){
 
  if(first==NULL){
   printf("void deletion");
  }
  else if(first==last){
-  printf("deleted item as: ",first->info);
+  printf("deleted item as: %d",first->info);
   first=last=NULL;
  }
  else{
-  printf("deleted item as: ",first->info);
+  printf("deleted item as: %d",first->info);
   first = first->next;
  }
 }
 
-int delete_end(){
+void delete_end(){
  NodeType *temp;
 
  if(first==NULL){
   printf("void deletion");
  }
  else if(first==last){
-  printf("deleted item as: ",first->info);
+  printf("deleted item as: %d",first->info);
   first=last=NULL;
  }
  else{
-  printf("deleted item as: ",last->info);
+  printf("deleted item as: %d",last->info);
   temp = first;
   while(temp->next!=last){
    temp = temp->next;
@@ -151,7 +150,7 @@ int delete_end(){
  free(temp);
 }
 
-int display(){
+void display(){
  NodeType *temp;
  temp = first;
  if(first==NULL){

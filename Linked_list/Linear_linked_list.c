@@ -5,13 +5,13 @@
 #include<process.h>
 
 int elm;
-int insert_begi();
-int insert_end();
-int insert_betw();
-int delete_begi();
-int delete_end();
-int delete_betw();
-int display();
+void insert_begi();
+void insert_end();
+void insert_betw();
+void delete_begi();
+void delete_end();
+void delete_betw();
+void display();
 
 struct Node
 {
@@ -85,7 +85,7 @@ int main(){
  while (ch=='y'||ch=='Y');
 }
 
-int insert_begi(){
+void insert_begi(){
  NodeType *Newnode;
  Newnode = (NodeType*)malloc(sizeof(NodeType));
 
@@ -103,7 +103,7 @@ int insert_begi(){
  }
 }
 
-int insert_end(){
+void insert_end(){
  NodeType *Newnode;
  Newnode = (NodeType*)malloc(sizeof(NodeType));
 
@@ -123,7 +123,7 @@ int insert_end(){
  }
 }
 
-int insert_betw(){
+void insert_betw(){
  int pos, i;
  NodeType *Newnode, *temp;
  Newnode = (NodeType*)malloc(sizeof(NodeType));
@@ -151,34 +151,34 @@ int insert_betw(){
  free(temp);
 }
 
-int delete_begi(){
+void delete_begi(){
  NodeType *temp;
 
  if(first==NULL){
   printf("void deletion");
  }
  else if(first==last){
-  printf("deleted item as: ",first->info);
+  printf("deleted item as: %d",first->info);
   first=last=NULL;
  }
  else{
-  printf("deleted item as: ",first->info);
+  printf("deleted item as: %d",first->info);
   first = first->next;
  }
 }
 
-int delete_end(){
+void delete_end(){
  NodeType *temp;
 
  if(first==NULL){
   printf("void deletion");
  }
  else if(first==last){
-  printf("deleted item as: ",first->info);
+  printf("deleted item as: %d",first->info);
   first=last=NULL;
  }
  else{
-  printf("deleted item as: ",last->info);
+  printf("deleted item as: %d",last->info);
   temp = first;
   while(temp->next!=last){
    temp = temp->next;
@@ -189,7 +189,7 @@ int delete_end(){
  free(temp);
 }
 
-int delete_betw(){
+void delete_betw(){
  NodeType *temp, *loc;
  int pos, i;
 
@@ -197,7 +197,7 @@ int delete_betw(){
   printf("void deletion");
  }
  else if(first==last){
-  printf("deleted item as: ",first->info);
+  printf("deleted item as: %d",first->info);
   first=last=NULL;
  }
  else{
@@ -209,13 +209,13 @@ int delete_betw(){
    temp = temp->next;
   }
   loc = temp->next;
-  printf("Deleated item as: ",loc->next->info);
+  printf("Deleated item as: %d",loc->next->info);
   temp->next = loc->next;
   free(temp);
  }
 }
 
-int display(){
+void display(){
  NodeType *temp;
  temp = first;
  if(first==NULL){
